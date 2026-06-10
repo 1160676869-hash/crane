@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import BorderGlow from "./BorderGlow.jsx";
 import usePortfolioMotion from "./usePortfolioMotion.js";
 
@@ -482,7 +483,7 @@ function Projects() {
           })}
         </div>
       </div>
-      {activeProject && activeVideo ? (
+      {activeProject && activeVideo ? createPortal((
         <div className="video-modal" role="dialog" aria-modal="true">
           <button
             className="video-modal-backdrop"
@@ -534,7 +535,7 @@ function Projects() {
             </div>
           </BorderGlow>
         </div>
-      ) : null}
+      ), document.body) : null}
     </section>
   );
 }

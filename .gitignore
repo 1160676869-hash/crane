@@ -1,0 +1,8 @@
+node_modules
+dist
+.vite
+*.log
+tools
+outputs
+work
+public/assets/portfolio-videos/*.mp4
